@@ -26,7 +26,7 @@ jobs:
         run: | 
           pip install selenium
           pip install pandas
-          pip install datetime time
+          pip install datetime
           pwd
         
       - name: Execute download python script
