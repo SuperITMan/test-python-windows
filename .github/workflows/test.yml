@@ -1,1 +1,31 @@
+name: test
+on:
+  workflow_dispatch:
 
+jobs:
+  test:
+    name: Test python script
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v3.0.0
+        with:
+          # Version range or exact version of a Python version to use, using SemVer's version range syntax.
+          python-version: 3.9
+          # Used to specify a package manager for caching in the default directory. Supported values: pip, pipenv.
+          # The target architecture (x86, x64) of the Python interpreter.
+          architecture: x64
+          
+      - name: setup-chromedriver
+        # You may pin to the exact commit or the version.
+        # uses: nanasess/setup-chromedriver@835cae695490330a7e390033b2b5bd67e6f8055e
+        uses: nanasess/setup-chromedriver@v1.0.1
+    
+      - name: Install Selenium with pip
+        run: pip install selenium
+        
+      - name: Execute download python script
+        run: python myscript.py
+        
+        
