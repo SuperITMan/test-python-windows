@@ -55,9 +55,9 @@ df = pd.read_csv(os.getcwd()+'ExportCSV.csv')
 print(len(df))
 
 def wait_until_file_exists(self, actual_file, wait_time_in_seconds=5):
-waits = 0
-while not path.isfile(actual_file) and waits < wait_time_in_seconds:
-   print("sleeping...." + str(waits))
-   sleep(.5)  # make sure file completes downloading
-   waits += .5
+    waits = 0
+    while not path.isfile(actual_file) and waits < wait_time_in_seconds:
+        print("sleeping...." + str(waits))
+        sleep(.5)  # make sure file completes downloading
+        waits += .5
 
