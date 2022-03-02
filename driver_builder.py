@@ -30,6 +30,7 @@ class DriverBuilder():
 
         dir_path = os.path.dirname(os.path.realpath(__file__))
         driver_path = os.path.join(dir_path, "drivers/chromedriver")
+        driver_path="C:/Program Files/Google/Chrome/Application/chrome"
 
         if sys.platform.startswith("win"):
             driver_path += ".exe"
