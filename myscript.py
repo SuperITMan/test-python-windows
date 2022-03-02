@@ -22,6 +22,7 @@ url = "https://www.onlinedatagenerator.com/"
 options = webdriver.ChromeOptions()
 options.add_experimental_option("prefs", prefs);
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
+options.addArguments("headless");
 driver = webdriver.Chrome(options=options)
 
 # Open website
@@ -33,5 +34,5 @@ driver.find_element(By.XPATH, '/html/body/div[2]/section[1]/div/div/div/div[2]/d
 #sleep(5)
 print(os.getcwd())
 print(os.listdir())
-df = pd.read_csv('D:\\a\\automated-uploads\\automated-uploads\\test-folder\\ExportCSV.csv')
+df = pd.read_csv(os.getcwd()+'ExportCSV.csv')
 print(len(df))
