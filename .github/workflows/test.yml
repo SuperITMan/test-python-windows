@@ -23,7 +23,11 @@ jobs:
         uses: nanasess/setup-chromedriver@v1.0.1
     
       - name: Install Selenium with pip
-        run: pip install selenium
+        run: | 
+          pip install selenium
+          pip install pandas
+          pip install datetime time
+          pwd
         
       - name: Execute download python script
         run: python myscript.py
